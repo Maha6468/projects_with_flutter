@@ -17,25 +17,20 @@ class _GridviewState extends State<Gridview> {
         centerTitle: true,
         toolbarHeight: 80,
       ),
-      body:GridView.count(
-          crossAxisCount: 3,
-              mainAxisSpacing: 3,
-              crossAxisSpacing: 3,
-              padding: EdgeInsets.all(10),
-              children: List.generate(20,(index)
-              {
-                return Container(
-                  height: 50,width: 30,
-                  //alignment:Alignment(50, 100),
-                  color: Colors.orange,
-                  child: Text('$index  maha',textAlign: TextAlign.center,),
-                );
-              }
-
-              )
-
-
-      )
+      body:GridView.builder(
+    itemCount: 10,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisSpacing: 6,
+              mainAxisSpacing: 6,
+              crossAxisCount: 5),
+          itemBuilder:(context,index){
+            return Container(
+              width: 30,height: 50,
+              color: Colors.lightGreenAccent,
+              child: Text('$index  Ma'),
+            );
+    },
+      ),
     );
   }
 }
