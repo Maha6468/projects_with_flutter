@@ -21,12 +21,14 @@ class _GridviewState extends State<Gridview> {
           crossAxisCount: 3,
               mainAxisSpacing: 3,
               crossAxisSpacing: 3,
-              children: List.generate(6,(index)
+              padding: EdgeInsets.all(10),
+              children: List.generate(20,(index)
               {
                 return Container(
                   height: 50,width: 30,
+                  //alignment:Alignment(50, 100),
                   color: Colors.orange,
-                  child: Text('$index'),
+                  child: Text('$index  maha',textAlign: TextAlign.center,),
                 );
               }
 
